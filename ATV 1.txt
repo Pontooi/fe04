@@ -1,0 +1,30 @@
+====================================================
+RELATÓRIO OFICIAL: TEMA 04 - TABELAS EM HTML
+Estudante: Luiz Davy Santana de Lacerda
+Turma: DS
+Data/Hora: 21/10/2026, 13:39:52
+Nota: 15 de 15 (100%) - 🏆 Excelente! Domínio pleno.
+----------------------------------------------------
+DESEMPENHO POR TEMA:
+Estrutura e tags: 6/6
+Semântica e scope: 5/5
+Acessibilidade e ARIA: 2/2
+Responsividade: 2/2
+----------------------------------------------------
+DETALHAMENTO:
+Q1: [OK] Alternativa (a)
+Q2: [OK] Alternativa (c)
+Q3: [OK] Alternativa (b)
+Q4: [OK] Alternativa (b)
+Q5: [OK] Alternativa (b)
+Q6: [OK] Alternativa (b)
+Q7: [OK] Alternativa (b)
+Q8: [OK] Alternativa (a)
+Q9: [OK] Alternativa (b)
+Q10: [OK] Alternativa (c)
+Q11: [OK] Alternativa (b)
+Q12: [OK] Alternativa (b)
+Q13: [OK] Alternativa (b)
+Q14: [OK] Alternativa (b)
+Q15: [OK] Alternativa (c)
+====================================================
