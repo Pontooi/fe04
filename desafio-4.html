@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desafio 4 — Comparativo de Planos de Curso</title>
+<link rel="stylesheet" href="dracula.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>📊 Desafio 4</h1>
+    <p>Comparativo de Planos de Curso</p>
+  </header>
+
+  <section>
+    <h2>📋 Briefing</h2>
+    <div class="briefing">
+      <strong>Objetivo:</strong> A escola está lançando dois planos — Básico e Completo. Você precisa entregar uma tabela comparativa onde cada recurso aparece uma única vez, agrupado pela categoria a que pertence (Aulas, Projetos, Suporte). Recursos que só existem no plano Completo ficam com o Básico vazio, mas a estrutura precisa estar íntegra.
+    </div>
+
+    <h3>🖼️ Desenho da tabela final</h3>
+    <div class="drawing-wrapper">
+      <div class="drawing-caption">Comparativo de Planos — 2026</div>
+      <table class="drawing-table">
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Recurso</th>
+            <th>Plano Básico</th>
+            <th>Plano Completo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th rowspan="3">Aulas</th>
+            <td>Vídeos gravados</td><td>Sim</td><td>Sim</td>
+          </tr>
+          <tr>
+            <td>Aulas ao vivo</td><td>Não</td><td>Sim</td>
+          </tr>
+          <tr>
+            <td>Material em PDF</td><td>Sim</td><td>Sim</td>
+          </tr>
+          <tr>
+            <th rowspan="2">Projetos</th>
+            <td>Projeto guiado</td><td>Sim</td><td>Sim</td>
+          </tr>
+          <tr>
+            <td>Correção individual</td><td>Não</td><td>Sim</td>
+          </tr>
+          <tr>
+            <th>Suporte</th>
+            <td>Fórum da comunidade</td><td>Sim</td><td>Sim</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="drawing-legend">A coluna "Categoria" tem <code>rowspan</code> de 3, 2 e 1 nas linhas correspondentes.</p>
+    </div>
+
+    <h3>🧩 Elementos essenciais</h3>
+    <div class="checklist">
+      <span><caption></span>
+      <span><thead></span>
+      <span><tbody></span>
+      <span><th scope="col"></span>
+      <span><th scope="row"></span>
+      <span>rowspan="3"</span>
+      <span>rowspan="2"</span>
+    </div>
+
+    <div class="tips">
+      <h5>💡 Dicas de implementação</h5>
+      <ul>
+        <li>Quando um <code><th></code> tem <code>rowspan="3"</code>, nas próximas <strong>duas linhas</strong> você não escreve a célula correspondente. Isso é o que mais confunde: a primeira linha após a mesclagem pula a coluna mesclada.</li>
+        <li>Se sua tabela saiu torta, quase certamente é porque você incluiu uma célula a mais (coluna Aulas repetida) ou a menos (coluna de projeto faltando). Confira uma linha por vez.</li>
+        <li>Use <code>scope="row"</code> nas células de categoria, não <code>scope="col"</code>. Elas são globais por linha mesclada.</li>
+      </ul>
+    </div>
+
+    <div class="highlight warning">
+      <strong>Atenção ao colspan/rowspan:</strong> sempre confira se a soma de cada linha chega ao número de colunas do <code><thead></code>. Neste desafio são 4 colunas. Na linha 1, você tem <code>rowspan="3"</code> em "Aulas" (ocupa 1 coluna em cada uma das 3 primeiras linhas), "Recurso" (1), Plano Básico (1) e Plano Completo (1) — total 4. Na linha 2, a coluna "Aulas" já está preenchida pela mesclagem, então você escreve só as outras 3.
+    </div>
+  </section>
+
+  <section>
+    <h2>✅ Sua Implementação</h2>
+    <div class="table-wrapper">
+      <table>
+        <caption>Comparativo de Planos — 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">Categoria</th>
+            <th scope="col">Recurso</th>
+            <th scope="col">Plano Básico</th>
+            <th scope="col">Plano Completo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" rowspan="3">Aulas</th>
+            <td>Vídeos gravados</td><td>Sim</td><td>Sim</td>
+          </tr>
+          <tr>
+            <td>Aulas ao vivo</td><td>Não</td><td>Sim</td>
+          </tr>
+          <tr>
+            <td>Material em PDF</td><td>Sim</td><td>Sim</td>
+          </tr>
+          <tr>
+            <th scope="row" rowspan="2">Projetos</th>
+            <td>Projeto guiado</td><td>Sim</td><td>Sim</td>
+          </tr>
+          <tr>
+            <td>Correção individual</td><td>Não</td><td>Sim</td>
+          </tr>
+          <tr>
+            <th scope="row">Suporte</th>
+            <td>Fórum da comunidade</td><td>Sim</td><td>Sim</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p><a href="index.html">← Voltar ao índice</a></p>
+    <p>&copy; 2026 &mdash; Programação Front-End</p>
+  </footer>
+</div>
+
+<button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">⬆ Topo</button>
+<script>
+  const btn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 200));
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+</body>
+</html>

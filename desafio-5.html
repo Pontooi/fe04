@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desafio 5 — Boletim Completo com Entidades</title>
+<link rel="stylesheet" href="dracula.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>📈 Desafio 5</h1>
+    <p>Boletim Completo com Entidades</p>
+  </header>
+
+  <section>
+    <h2>📋 Briefing</h2>
+    <div class="briefing">
+      <strong>Objetivo:</strong> Este é o desafio consolidado. Você vai entregar o boletim da turma com três alunos e quatro disciplinas, incluindo o rodapé com a média da turma por disciplina. O título do boletim precisa usar entidades HTML onde faça sentido — por exemplo, travessão (—), sinal de igual e percentual na linha de média. O resultado precisa ficar idêntico ao desenho abaixo.
+    </div>
+
+    <h3>🖼️ Desenho da tabela final</h3>
+    <div class="drawing-wrapper">
+      <div class="drawing-caption">Boletim Final — Front-End 2026</div>
+      <table class="drawing-table">
+        <thead>
+          <tr>
+            <th>Aluno</th>
+            <th>HTML</th>
+            <th>CSS</th>
+            <th>JavaScript</th>
+            <th>Média</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>Ana</th><td>9,0</td><td>8,5</td><td>8,0</td><td>8,5</td></tr>
+          <tr><th>João</th><td>7,5</td><td>9,0</td><td>8,5</td><td>8,33</td></tr>
+          <tr><th>Marina</th><td>8,5</td><td>9,5</td><td>9,0</td><td>9,0</td></tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">Média da turma</th>
+            <td>8,33</td>
+            <td>9,0</td>
+            <td>8,5</td>
+            <td>8,61</td>
+          </tr>
+        </tfoot>
+      </table>
+      <p class="drawing-legend">Note o uso de <code>&mdash;</code> no caption e a linha de rodapé com <code><th scope="row"></code>.</p>
+    </div>
+
+    <h3>🧩 Elementos essenciais</h3>
+    <div class="checklist">
+      <span><caption></span>
+      <span><thead></span>
+      <span><tbody></span>
+      <span><tfoot></span>
+      <span><th scope="col"></span>
+      <span><th scope="row"></span>
+      <span>&mdash;</span>
+      <span>&nbsp;</span>
+      <span>&</span>
+      <span><</span>
+      <span>></span>
+    </div>
+
+    <div class="tips">
+      <h5>💡 Dicas de implementação</h5>
+      <ul>
+        <li>O título <strong>Boletim Final &mdash; Front-End 2026</strong> usa <code>&mdash;</code> para o travessão.</li>
+        <li>Na linha de média da turma, o primeiro bloco é o cabeçalho "Média da turma" na primeira coluna. Ele é <code><th scope="row"></code>, como os nomes dos alunos.</li>
+        <li>Para exibir <code><</code>, <code>></code> e <code>&</code> dentro da página, use sempre <code><</code>, <code>></code> e <code>&</code>. Caso contrário, o navegador interpreta como código.</li>
+        <li>Não invente valores. Use as notas dadas no desenho.</li>
+        <li>Se algum aluno tiver valor vazio (—) numa célula, escreva <code>&mdash;</code> dentro do <code><td></code>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>✅ Sua Implementação</h2>
+    <div class="table-wrapper">
+      <table>
+        <caption>Boletim Final &mdash; Front-End 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">Aluno</th>
+            <th scope="col">HTML</th>
+            <th scope="col">CSS</th>
+            <th scope="col">JavaScript</th>
+            <th scope="col">Média</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Ana</th><td>9,0</td><td>8,5</td><td>8,0</td><td>8,5</td></tr>
+          <tr><th scope="row">João</th><td>7,5</td><td>9,0</td><td>8,5</td><td>8,33</td></tr>
+          <tr><th scope="row">Marina</th><td>8,5</td><td>9,5</td><td>9,0</td><td>9,0</td></tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">Média da turma</th>
+            <td>8,33</td>
+            <td>9,0</td>
+            <td>8,5</td>
+            <td>8,61</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p><a href="index.html">← Voltar ao índice</a></p>
+    <p>&copy; 2026 &mdash; Programação Front-End</p>
+  </footer>
+</div>
+
+<button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">⬆ Topo</button>
+<script>
+  const btn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 200));
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+</body>
+</html>

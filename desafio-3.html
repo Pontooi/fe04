@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desafio 3 — Cronograma de Projetos</title>
+<link rel="stylesheet" href="dracula.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>📋 Desafio 3</h1>
+    <p>Cronograma de Projetos</p>
+  </header>
+
+  <section>
+    <h2>📋 Briefing</h2>
+    <div class="briefing">
+      <strong>Objetivo:</strong> A feira de projetos do semestre precisa de um cronograma oficial divulgado como tabela. Cada linha é um projeto. Você precisa incluir, além dos dados normais, um rodapé que informe o total de projetos atrasados — e ele não pode parecer isolado da estrutura.
+    </div>
+
+    <h3>🖼️ Desenho da tabela final</h3>
+    <div class="drawing-wrapper">
+      <div class="drawing-caption">Cronograma da Feira de Projetos 2026</div>
+      <table class="drawing-table">
+        <thead>
+          <tr>
+            <th>Projeto</th>
+            <th>Equipe</th>
+            <th>Responsável</th>
+            <th>Entrega</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>Portal da Cantina</th><td>Alpha</td><td>Marina Silva</td><td>12/11/2026</td><td>Concluído</td></tr>
+          <tr><th>App de Caronas</th><td>Beta</td><td>João Pereira</td><td>20/11/2026</td><td>Em andamento</td></tr>
+          <tr><th>Painel de Notas</th><td>Gamma</td><td>Ana Costa</td><td>05/11/2026</td><td>Atrasado</td></tr>
+          <tr><th>Blog da Escola</th><td>Delta</td><td>Pedro Lima</td><td>28/10/2026</td><td>Atrasado</td></tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">Total de projetos atrasados</td>
+            <td>2</td>
+          </tr>
+        </tfoot>
+      </table>
+      <p class="drawing-legend">A célula do total tem <code>colspan="4"</code>. A última coluna recebe o valor.</p>
+    </div>
+
+    <h3>🧩 Elementos essenciais</h3>
+    <div class="checklist">
+      <span><caption></span>
+      <span><thead></span>
+      <span><tbody></span>
+      <span><tfoot></span>
+      <span><th scope="col"></span>
+      <span><th scope="row"></span>
+      <span>colspan="4"</span>
+    </div>
+
+    <div class="tips">
+      <h5>💡 Dicas de implementação</h5>
+      <ul>
+        <li>O <code><tfoot></code> fica entre <code></thead></code> e <code></tbody></code>, no código.</li>
+        <li>Na linha do total, você precisa mesclar as 4 primeiras colunas em uma única célula para o texto "Total de projetos atrasados", e o valor "2" fica isolado na última coluna. Por isso <code>colspan="4"</code> e depois <code><td>2</td></code>.</li>
+        <li>Não use <code><th></code> na célula do "2". Não é cabeçalho — é dado.</li>
+        <li>Verifique: 4 (do colspan) + 1 (a célula do 2) = 5 colunas, igual ao total do cabeçalho. Se der 4 ou 6, a tabela sai torta.</li>
+        <li>Repare que os status "Concluído", "Em andamento" e "Atrasado" são todos <code><td></code>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>✅ Sua Implementação</h2>
+    <div class="table-wrapper">
+      <table>
+        <caption>Cronograma da Feira de Projetos 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">Projeto</th>
+            <th scope="col">Equipe</th>
+            <th scope="col">Responsável</th>
+            <th scope="col">Entrega</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Portal da Cantina</th><td>Alpha</td><td>Marina Silva</td><td>12/11/2026</td><td>Concluído</td></tr>
+          <tr><th scope="row">App de Caronas</th><td>Beta</td><td>João Pereira</td><td>20/11/2026</td><td>Em andamento</td></tr>
+          <tr><th scope="row">Painel de Notas</th><td>Gamma</td><td>Ana Costa</td><td>05/11/2026</td><td>Atrasado</td></tr>
+          <tr><th scope="row">Blog da Escola</th><td>Delta</td><td>Pedro Lima</td><td>28/10/2026</td><td>Atrasado</td></tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">Total de projetos atrasados</td>
+            <td>2</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p><a href="index.html">← Voltar ao índice</a></p>
+    <p>&copy; 2026 &mdash; Programação Front-End</p>
+  </footer>
+</div>
+
+<button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">⬆ Topo</button>
+<script>
+  const btn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 200));
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+</body>
+</html>
